@@ -91,7 +91,8 @@ namespace Tweens {
       if (isPaused) {
         return;
       }
-      var deltaTime = useUnscaledTime ? Time.unscaledDeltaTime : Time.deltaTime;
+      // var deltaTime = useUnscaledTime ? Time.unscaledDeltaTime : Time.deltaTime;
+      var deltaTime = useUnscaledTime ? Time.fixedUnscaledDeltaTime : Time.fixedDeltaTime;
       if (haltTime.HasValue) {
         haltTime -= deltaTime;
         if (haltTime <= 0) {

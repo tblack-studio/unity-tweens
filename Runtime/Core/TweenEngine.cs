@@ -7,11 +7,16 @@ namespace Tweens.Core {
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     internal static void Initialize() {
-      Object.DontDestroyOnLoad(new GameObject("TweenBehaviour").AddComponent<TweenBehaviour>());
+      Object.DontDestroyOnLoad(new GameObject("TweenBehaviour").AddComponent<TweenBehaviourFixedUpdate>());
     }
 
-    class TweenBehaviour : MonoBehaviour {
-      void LateUpdate() => Update();
+    // class TweenBehaviour : MonoBehaviour {
+    //   void LateUpdate() => Update();
+    //   void OnDestroy() => instances.Clear();
+    // }
+
+    class TweenBehaviourFixedUpdate: : MonoBehaviour {
+      void FixedUpdate() => Update();
       void OnDestroy() => instances.Clear();
     }
 
