@@ -15,7 +15,7 @@ namespace Tweens.Core {
     //   void OnDestroy() => instances.Clear();
     // }
 
-    class TweenBehaviourFixedUpdate: : MonoBehaviour {
+    class TweenBehaviourFixedUpdate : MonoBehaviour {
       void FixedUpdate() => Update();
       void OnDestroy() => instances.Clear();
     }
